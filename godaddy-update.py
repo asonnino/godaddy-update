@@ -10,7 +10,8 @@ from godaddypy import Client, Account
 api_key = 'GODADDY API KEY'
 api_secret = 'GODADDY API SECRET'
 
-domains = ['domain.com']
+domain = 'alfcorp.org'
+name =  '@'
 
 # ---  end configs. ---
 
@@ -18,5 +19,5 @@ ip = get('https://api.ipify.org').text
 
 account = Account(api_key=api_key, api_secret=api_secret)
 client = Client(account)
-ret = client.update_ip(ip, domains=domains)
+ret = client.update_record_ip(ip, domain, name, 'A')
 assert ret
